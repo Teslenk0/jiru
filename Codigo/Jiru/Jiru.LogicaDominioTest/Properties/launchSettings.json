@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Jiru.LogicaDominioTest": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jiru.Configuracion\Jiru.Configuracion.csproj" />
+    <ProjectReference Include="..\Jiru.Dominio\Jiru.Dominio.csproj" />
+    <ProjectReference Include="..\Jiru.DTOs\Jiru.DTOs.csproj" />
+    <ProjectReference Include="..\Jiru.Excepciones\Jiru.Excepciones.csproj" />
+    <ProjectReference Include="..\Jiru.IAccesoADatos\Jiru.IAccesoADatos.csproj" />
+    <ProjectReference Include="..\Jiru.ILogicaDominio\Jiru.ILogicaDominio.csproj" />
+    <ProjectReference Include="..\Jiru.Utilidades\Jiru.Utilidades.csproj" />
+  </ItemGroup>
+
+</Project>

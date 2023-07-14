@@ -1,0 +1,111 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <div *ngFor="let alerta of alertas" class="font-weight-bold">
+        <alert [type]="alerta.tipo" [dismissible]="alerta.cerrable"><i
+          class="fa fa-exclamation-circle mr-1"></i>{{ alerta.mensaje }}</alert>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-lg-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Listado de Bugs</h5>
+        </div>
+        <div class="card-body">
+          <div *ngIf="usuarioLogeado.rol.toUpperCase() !== ROLES.DESARROLLADOR">
+            <form [formGroup]="formFiltros" class="row w-100">
+              <div class="form-group col-md-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombre"
+                  id="nombre"
+                  placeholder="Filtrar por nombre..."
+                />
+              </div>
+              <div class="form-group col-md-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="id"
+                  id="id"
+                  placeholder="Filtrar por ID..."
+                />
+              </div>
+
+              <div class="form-group col-md-3">
+                <select
+                  class="form-control"
+                  id="proyectoId"
+                  formControlName="proyectoId"
+                  required>
+                  <option [value]="''">Filtrar por proyecto...</option>
+                  <option *ngFor="let proyecto of proyectos" [value]="proyecto.id">{{proyecto.nombre}}</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <select
+                  class="form-control"
+                  id="estado"
+                  formControlName="estado"
+                >
+                  <option [value]="''">Filtrar por estado...</option>
+                  <option [value]="'Activo'">Activo</option>
+                  <option [value]="'Resuelto'">Resuelto</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div>
+            <table class="table table-responsive-sm table-hover table-outline mb-0">
+              <thead class="thead-light">
+              <tr>
+                <th class="text-center">ID</th>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Estado</th>
+                <th class="text-center"><i class="fa fa-clock-o mr-1"></i>Duración</th>
+                <th class="text-center"><i class="fa fa-svc-o mr-1"></i>Version</th>
+                <th class="text-center">Proyecto</th>
+                <th class="text-center"><i class="fa fa-wrench mr-1"></i>Acciones</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let bug of bugs; let index = i;">
+                <td class="text-center font-lg font-weight-bold">
+                  <span>{{bug.id}}</span>
+                </td>
+                <td class="font-lg text-center">
+                  <span>{{bug.nombre}}</span>
+                </td>
+                <td class="text-center">
+                  <span class="badge {{bug.estado === 'Resuelto' ? 'badge-info' : 'badge-warning'}} font-lg">{{bug.estado}}</span>
+                </td>
+                <td class="text-center">
+                  <span class="badge badge-success font-lg">{{bug.duracionHoras}} hs</span>
+                </td>
+                <td class="text-center font-lg">
+                  <span>v{{bug.version}}</span>
+                </td>
+                <td class="text-center font-lg">
+                  <span>{{bug.proyecto.nombre}}</span>
+                </td>
+                <td class="text-center">
+                  <i (click)="editarBug(bug)" class="fa fa-edit font-lg info text-info pointer cursor-pointer"></i>
+                  <i *ngIf="usuarioLogeado.rol.toUpperCase() !== ROLES.DESARROLLADOR" (click)="eliminarBug(bug)" class="fa fa-remove mr-1 font-lg text-danger cursor-pointer"></i>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        <div class="card-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

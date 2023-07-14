@@ -1,0 +1,103 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-6">
+      <div *ngFor="let alerta of alertas" class="font-weight-bold">
+        <alert [type]="alerta.tipo" [dismissible]="alerta.cerrable"><i
+          class="fa fa-exclamation-circle mr-1"></i>{{ alerta.mensaje }}</alert>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Crear Tarea</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formTarea">
+            <div class="form-group">
+              <label for="nombre">Nombre (*)</label>
+              <input
+                type="text"
+                [class]="(!formTarea.controls['nombre'].valid && formTarea.controls['nombre'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                formControlName="nombre"
+                id="nombre"
+                placeholder="Ingresa el nombre de la tarea"
+                required
+              />
+              <div *ngIf="(!formTarea.controls['nombre'].valid && formTarea.controls['nombre'].dirty)"
+                   class="invalid-feedback">
+                Ingresa un nombre válido
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mt-2" for="proyectoId">Proyecto (*)</label>
+              <select
+                [class]="(!formTarea.controls['proyectoId'].valid && formTarea.controls['proyectoId'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                id="proyectoId"
+                formControlName="proyectoId"
+                required>
+                <option [value]="''">Selecciona un proyecto</option>
+                <option *ngFor="let proyecto of proyectos" [value]="proyecto.id">{{proyecto.nombre}}</option>
+              </select>
+              <div *ngIf="(!formTarea.controls['proyectoId'].valid && formTarea.controls['proyectoId'].dirty)"
+                   class="invalid-feedback">
+                Selecciona un proyecto válido
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mt-2" for="costoPorHora">Costo
+                por hora (*)</label>
+              <input
+                type="number"
+                [class]="(!formTarea.controls['costoPorHora'].valid && formTarea.controls['costoPorHora'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                min="1"
+                formControlName="costoPorHora"
+                id="costoPorHora"
+                placeholder="Ingresa el costo por hora"
+                required
+              />
+              <div *ngIf="(!formTarea.controls['costoPorHora'].valid && formTarea.controls['costoPorHora'].dirty)"
+                   class="invalid-feedback">
+                Ingresa un costo por hora válido
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mt-2" for="duracionHoras">Duracion (*)</label>
+              <input
+                type="number"
+                [class]="(!formTarea.controls['duracionHoras'].valid && formTarea.controls['duracionHoras'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                min="1"
+                formControlName="duracionHoras"
+                id="duracionHoras"
+                placeholder="Ingresa la duracion"
+                required
+              />
+              <div *ngIf="(!formTarea.controls['duracionHoras'].valid && formTarea.controls['duracionHoras'].dirty)"
+                   class="invalid-feedback">
+                Ingresa una duración en horas válida
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer d-flex flex-row justify-content-end">
+          <button
+            (click)="enviarForm()"
+            [disabled]="formTarea.invalid"
+            type="submit"
+            class="btn btn-md btn-primary mr-2"
+          >
+            <i class="fa fa-save mr-1"></i>Guardar
+          </button>
+          <button
+            (click)="cancelarForm()"
+            type="reset"
+            class="btn btn-md btn-danger"
+          >
+            <i class="fa fa-remove mr-1"></i>Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

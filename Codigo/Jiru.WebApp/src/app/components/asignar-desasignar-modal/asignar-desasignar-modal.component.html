@@ -1,0 +1,41 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{titulo}}</h4>
+  <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formUsuario">
+    <label class="mt-2" for="rol">Rol (*)</label>
+    <select
+      [class]="!formUsuario.controls['rol'].valid ? 'form-control is-invalid' : 'form-control'"
+      id="rol"
+      formControlName="rol"
+      required>
+      <option>Desarrollador</option>
+      <option>Tester</option>
+    </select>
+    <div *ngIf="(!formUsuario.controls['rol'].valid && formUsuario.controls['rol'].dirty)"
+         class="invalid-feedback">
+      Ingresa un rol válido
+    </div>
+    <label class="mt-2" for="correoElectronico">Correo electrónico (*)</label>
+    <input
+      type="email"
+      [class]="(!formUsuario.controls['correoElectronico'].valid && formUsuario.controls['correoElectronico'].dirty) ? 'form-control is-invalid' : 'form-control'"
+      formControlName="correoElectronico"
+      id="correoElectronico"
+      placeholder="Ingresa el correo electrónico"
+      required
+    />
+    <div
+      *ngIf="(!formUsuario.controls['correoElectronico'].valid && formUsuario.controls['correoElectronico'].dirty)"
+      class="invalid-feedback">
+      Ingresa un correo electrónico válido
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="confirmar()">{{botonEnviar}}</button>
+  <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()">{{botonCerrar}}</button>
+</div>

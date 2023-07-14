@@ -1,0 +1,133 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-6">
+      <div *ngFor="let alerta of alertas" class="font-weight-bold">
+        <alert [type]="alerta.tipo" [dismissible]="alerta.cerrable"><i
+          class="fa fa-exclamation-circle mr-1"></i>{{ alerta.mensaje }}</alert>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-lg-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>{{esEdicion ? "Modificar Bug" : "Crear Bug"}}</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formBug">
+            <div class="form-group">
+              <label for="nombre">Nombre (*)</label>
+              <input
+                type="text"
+                [class]="(!formBug.controls['nombre'].valid && formBug.controls['nombre'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                formControlName="nombre"
+                id="nombre"
+                placeholder="Ingresa el nombre del bug"
+                required
+              />
+              <div *ngIf="(!formBug.controls['nombre'].valid && formBug.controls['nombre'].dirty)"
+                   class="invalid-feedback">
+                Ingresa un nombre válido
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="mt-2" for="proyectoId">Proyecto (*)</label>
+              <select
+                [class]="(!formBug.controls['proyectoId'].valid && formBug.controls['proyectoId'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                id="proyectoId"
+                formControlName="proyectoId"
+                required>
+                <option [value]="''">Selecciona un proyecto</option>
+                <option *ngFor="let proyecto of proyectos" [value]="proyecto.id">{{proyecto.nombre}}</option>
+              </select>
+              <div *ngIf="(!formBug.controls['proyectoId'].valid && formBug.controls['proyectoId'].dirty)"
+                   class="invalid-feedback">
+                Selecciona un proyecto válido
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="descripcion">Descripcion (*)</label>
+              <textarea
+                [class]="(!formBug.controls['descripcion'].valid && formBug.controls['descripcion'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                formControlName="descripcion"
+                id="descripcion"
+                rows="4"
+                placeholder="Ingresa la descripción del bug"
+                required></textarea>
+              <div *ngIf="(!formBug.controls['descripcion'].valid && formBug.controls['descripcion'].dirty)"
+                   class="invalid-feedback">
+                Ingresa una descripción válida
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mt-2" for="version">Version (*)</label>
+              <input
+                type="text"
+                [class]="(!formBug.controls['version'].valid && formBug.controls['version'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                formControlName="version"
+                id="version"
+                placeholder="Ingresa la versión del bug"
+                required
+              />
+              <div *ngIf="(!formBug.controls['version'].valid && formBug.controls['version'].dirty)"
+                   class="invalid-feedback">
+                Ingresa una versión válida
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="mt-2" for="estado">Estado (*)</label>
+              <select
+                [class]="(!formBug.controls['estado'].valid && formBug.controls['estado'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                id="estado"
+                formControlName="estado"
+                required>
+                <option [value]="''">Selecciona un estado</option>
+                <option>Activo</option>
+                <option>Resuelto</option>
+              </select>
+              <div *ngIf="(!formBug.controls['estado'].valid && formBug.controls['estado'].dirty)"
+                   class="invalid-feedback">
+                Selecciona un estado válido
+              </div>
+            </div>
+            <div *ngIf="formBug.controls['estado'].value === 'Resuelto'" class="form-group">
+              <label class="mt-2" for="duracionHoras">Duracion (*)</label>
+              <input
+                type="number"
+                [class]="(!formBug.controls['duracionHoras'].valid && formBug.controls['duracionHoras'].dirty) ? 'form-control is-invalid' : 'form-control'"
+                min="1"
+                formControlName="duracionHoras"
+                id="duracionHoras"
+                placeholder="Ingresa la duracion"
+                required
+              />
+              <div *ngIf="(!formBug.controls['duracionHoras'].valid && formBug.controls['duracionHoras'].dirty)"
+                   class="invalid-feedback">
+                Ingresa una duración válida
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer d-flex flex-row justify-content-end">
+          <button
+            (click)="enviarForm()"
+            [disabled]="formBug.invalid"
+            type="submit"
+            class="btn btn-md btn-primary mr-2"
+          >
+            <i class="fa fa-save mr-1"></i>Guardar
+          </button>
+          <button
+            (click)="cancelarForm()"
+            type="reset"
+            class="btn btn-md btn-danger"
+          >
+            <i class="fa fa-remove mr-1"></i>Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<InfoWarnings>
+  <Info>Begin full analysis with NDepend v2021.2.1</Info>
+  <Info>Visual Studio solution file resolved to absolute file path: from    {..\..\Codigo\Jiru\Jiru.sln}    to    {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.sln}</Info>
+  <Info>Output directory resolved to absolute directory path: C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Documentacion\NDepend\NDependOut</Info>
+  <Info>Compare with analysis result obtained on 2021 November - 14 Sunday 18:55  (which is the analysis result with date closest to 30 days ago)</Info>
+  <Info>.NET Assemblies resolved from the Visual Studio solution file {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.sln}
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.Dominio\bin\debug\net5.0\Jiru.Dominio.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.ILogicaDominio\bin\debug\net5.0\Jiru.ILogicaDominio.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.LogicaDominio\bin\debug\net5.0\Jiru.LogicaDominio.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.IAccesoADatos\bin\debug\net5.0\Jiru.IAccesoADatos.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.DTOs\bin\debug\net5.0\Jiru.DTOs.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.Configuracion\bin\debug\net5.0\Jiru.Configuracion.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.Excepciones\bin\debug\net5.0\Jiru.Excepciones.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.ILogicaImportacion\bin\debug\net5.0\Jiru.IImportacion.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.LogicaImportacion\bin\debug\net5.0\Jiru.LogicaImportacion.TXT.ProveedorB.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.Utilidades\bin\debug\net5.0\Jiru.Utilidades.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.Web\bin\debug\net5.0\Jiru.Web.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.AccesoADatos\bin\debug\net5.0\Jiru.AccesoADatos.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.LogicaImportacion.XML\bin\debug\net5.0\Jiru.LogicaImportacion.XML.ProveedorA.dll
+   C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.LogicaImportacion.JSON.ProveedorC\bin\debug\net5.0\Jiru.LogicaImportacion.JSON.ProveedorC.dll</Info>
+  <Info>.NET Assemblies filtered out from the Visual Studio solution file {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.sln}
+   Jiru.LogicaDominioTest
+   Jiru.LogicaImportacionTest
+   Jiru.WebTest
+   Jiru.AccesoADatosTest</Info>
+  <Info>Concurrent mode</Info>
+  <Info>.NET Assemblies loaded from {C:\Program Files\dotnet\shared\Microsoft.NETCore.App\5.0.12} 
+   System.Xml.ReaderWriter.dll   v5.0.0.0
+   System.Xml.XmlSerializer.dll   v5.0.0.0
+   System.Linq.Queryable.dll   v5.0.0.0
+   System.IO.FileSystem.dll   v5.0.0.0
+   System.ComponentModel.dll   v5.0.0.0
+   System.Net.Primitives.dll   v5.0.0.0
+   System.Console.dll   v5.0.0.0
+   System.Text.Json.dll   v5.0.0.0
+   System.ComponentModel.Annotations.dll   v5.0.0.0
+   System.Linq.dll   v5.0.0.0
+   System.Linq.Expressions.dll   v5.0.0.0
+   System.Security.Claims.dll   v5.0.0.0
+   System.Collections.dll   v5.0.0.0
+   System.Runtime.dll   v5.0.0.0</Info>
+  <Info>.NET Assemblies loaded from {C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\5.0.12} 
+   Microsoft.AspNetCore.Hosting.dll   v5.0.0.0
+   Microsoft.Extensions.Primitives.dll   v5.0.0.0
+   Microsoft.AspNetCore.Http.Features.dll   v5.0.0.0
+   Microsoft.AspNetCore.Authorization.Policy.dll   v5.0.0.0
+   Microsoft.AspNetCore.Diagnostics.dll   v5.0.0.0
+   Microsoft.AspNetCore.Http.dll   v5.0.0.0
+   Microsoft.AspNetCore.Mvc.dll   v5.0.0.0
+   Microsoft.AspNetCore.dll   v5.0.0.0
+   Microsoft.Extensions.Hosting.dll   v5.0.0.0
+   Microsoft.AspNetCore.Mvc.Abstractions.dll   v5.0.0.0
+   Microsoft.AspNetCore.Routing.dll   v5.0.0.0
+   Microsoft.AspNetCore.Cors.dll   v5.0.0.0
+   Microsoft.AspNetCore.Http.Abstractions.dll   v5.0.0.0
+   Microsoft.Extensions.DependencyInjection.Abstractions.dll   v5.0.0.0
+   Microsoft.AspNetCore.Hosting.Abstractions.dll   v5.0.0.0
+   Microsoft.Extensions.Hosting.Abstractions.dll   v5.0.0.0
+   Microsoft.AspNetCore.Mvc.Core.dll   v5.0.0.0
+   Microsoft.Extensions.Configuration.Json.dll   v5.0.0.0
+   Microsoft.Extensions.Configuration.dll   v5.0.0.0
+   Microsoft.Extensions.Configuration.Abstractions.dll   v5.0.0.0</Info>
+  <Warning>The source file {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.LogicaDominio\LogicaProyecto.cs} (last modified 15 Nov 2021 20:44:14) and the PDB file of the assembly {Jiru.LogicaDominio} (last modified 15 Nov 2021 19:14:56) are not in-sync.</Warning>
+  <Warning>The source file {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.Web\Controllers\V1\ControladorImportacion.cs} (last modified 15 Nov 2021 21:46:07) and the PDB file of the assembly {Jiru.Web} (last modified 15 Nov 2021 19:14:57) are not in-sync.</Warning>
+  <Warning>The source file {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Codigo\Jiru\Jiru.LogicaImportacion.XML\Mapeadores\MapeadorXML.cs} (last modified 15 Nov 2021 21:06:24) and the PDB file of the assembly {Jiru.LogicaImportacion.XML.ProveedorA} (last modified 14 Nov 2021 18:29:47) are not in-sync.</Warning>
+  <Info>69 source files parsed ; all source files found ; 3 source files not in-sync with PDB</Info>
+  <Info>0 code rule has been extracted from code.</Info>
+  <Info>No dependency cycle detected in assemblies referencement graph.</Info>
+  <Info>Do merge code generated by compiler into application code.</Info>
+  <Info>No SuppressMessageAttribute found in the analyzed code base. Since NDepend v2018.2 SuppressMessageAttribute can be used to suppress NDepend issues. Don't forget to set in your projects the compilation symbol CODE_ANALYSIS to use this attribute to suppress NDepend issues.</Info>
+  <Info>Persisting code model snapshot in {C:\Users\tesla\Desktop\ORT\DA2\da2-proyecto\Documentacion\NDepend\NDependOut\NDependAnalysisResult_Jiru_2021Nov16_19h44.ndar}</Info>
+  <Info>Start log trend metrics values out-of-process.</Info>
+  <Info>NDepend analysis done. Duration: 00:01.599</Info>
+</InfoWarnings>

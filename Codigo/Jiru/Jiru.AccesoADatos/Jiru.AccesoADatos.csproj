@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqKit.Core" Version="1.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jiru.Dominio\Jiru.Dominio.csproj" />
+    <ProjectReference Include="..\Jiru.IAccesoADatos\Jiru.IAccesoADatos.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,46 @@
+{
+  "Proyecto": "TESTJSON",
+  "Bugs": [
+    {
+      "Id": "1",
+      "Nombre": "Error de Red",
+      "Descripcion": "El servidor no llega al motor de base de datos",
+      "Version": "1.0.0",
+      "Estado": "Resuelto",
+      "DuracionHoras": 6,
+      "CorreoResueltoPor": "erling@borussia.com" 
+    },
+    {
+      "Id": "2",
+      "Nombre": "Fuente incorrecta",
+      "Descripcion": "La webapp tiene una fuente incorrecta",
+      "Version": "1.0.0",
+      "Estado": "Activo",
+      "DuracionHoras": 5
+    },
+    {
+      "Id": "3",
+      "Nombre": "Agregar importador desde Jira",
+      "Descripcion": "Se debe poder mover todos los bugs desde Jira a Jiru",
+      "Version": "1.0.0",
+      "Estado": "Activo",
+      "DuracionHoras": 25
+    },
+    {
+      "Id": "4",
+      "Nombre": "WAF Bloqueando todo",
+      "Descripcion": "El WAF esta bloqueando todo el trafico que viene desde Brasil",
+      "Version": "1.0.0",
+      "Estado": "Resuelto",
+      "DuracionHoras": 3
+    },
+    {
+      "Id": "5",
+      "Nombre": "No hay WiFi en la oficina",
+      "Descripcion": "No funciona el wifi en la oficina",
+      "Version": "1.0.0",
+      "Estado": "Activo",
+      "DuracionHoras": 3
+    }
+  ]
+}

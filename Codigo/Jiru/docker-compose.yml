@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  jiru_web:
+    image: ${DOCKER_REGISTRY-}jiruweb
+    build:
+      context: .
+      dockerfile: Jiru.Web/Dockerfile
+    ports:
+      - 8000:80
+    networks:
+      - webnet
+    volumes:
+      - "C:/libreriasjiru:/opt/jirulibs"
+      - "C:/importaciones:/opt/importaciones"
+    depends_on:
+      - jiru_db
+  jiru_db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+     - ACCEPT_EULA=Y
+     - MSSQL_PID=Express
+     - SA_PASSWORD=Jiru123_Pass
+    ports: 
+     - 14333:1433
+    networks:
+     - webnet
+    volumes:
+      - ./dbdata:/var/opt/mssql/data
+      - ./dblogs:/var/opt/mssql/log
+      - ./dbsecrets:/var/opt/mssql/secrets
+
+networks:
+  webnet:

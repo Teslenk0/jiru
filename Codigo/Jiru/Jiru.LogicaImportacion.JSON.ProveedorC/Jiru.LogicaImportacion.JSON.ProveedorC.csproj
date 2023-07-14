@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jiru.DTOs\Jiru.DTOs.csproj" />
+    <ProjectReference Include="..\Jiru.Excepciones\Jiru.Excepciones.csproj" />
+    <ProjectReference Include="..\Jiru.ILogicaImportacion\Jiru.IImportacion.csproj" />
+  </ItemGroup>
+
+</Project>

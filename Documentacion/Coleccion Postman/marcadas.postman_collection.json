@@ -1,0 +1,1814 @@
+{
+	"info": {
+		"_postman_id": "318817a7-ab43-42ca-b627-2717188f71a0",
+		"name": "Pruebas funcionalidades marcadas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inicial",
+			"item": [
+				{
+					"name": "Acceder con administrador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contrasena\": \"123456\",\n    \"correoElectronico\": \"admin@jiru.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/autenticacion/acceder",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autenticacion",
+								"acceder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Administrador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"apellido\": \"ADMIN\",\n    \"correoElectronico\": \"admin@jiru.com.uy\",\n    \"nombre\": \"ADMIN\",\n    \"nombreUsuario\": \"ADMIN\",\n    \"contrasena\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/usuario/administrador",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"usuario",
+								"administrador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Tester",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"apellido\": \"Panzardi\",\n    \"correoElectronico\": \"spanzardi@gmail.com\",\n    \"nombre\": \"Santiago\",\n    \"nombreUsuario\": \"spanzardi\",\n    \"contrasena\":\"123456\",\n    \"proyectos\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/usuario/tester",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"usuario",
+								"tester"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Desarrollador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"apellido\": \"Pena\",\n    \"correoElectronico\": \"bpena@gmail.com\",\n    \"nombre\": \"Brahian\",\n    \"nombreUsuario\": \"bpena\",\n    \"contrasena\":\"123456\",\n    \"proyectos\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/usuario/desarrollador",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"usuario",
+								"desarrollador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Proyecto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"FIFA22\",\n    \"bugs\": [],\n    \"desarrolladores\": [],\n    \"testers\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar tester al proyecto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto",
+								":id",
+								"tester",
+								":idUsuario"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
+								},
+								{
+									"key": "idUsuario",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar desarrollador al proyecto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto/:id/desarrollador/:idUsuario",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto",
+								":id",
+								"desarrollador",
+								":idUsuario"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "(Required) "
+								},
+								{
+									"key": "idUsuario",
+									"value": "4",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proyecto",
+			"item": [
+				{
+					"name": "Crear proyecto",
+					"item": [
+						{
+							"name": "Crear Proyecto",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Futbol\",\n    \"bugs\": [],\n    \"desarrolladores\": [],\n    \"testers\": []\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Tester",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"apellido\": \"Mbappe\",\n    \"correoElectronico\": \"mbappe@psg.com\",\n    \"nombre\": \"kylian\",\n    \"nombreUsuario\": \"kmbappe\",\n    \"contrasena\":\"123456\",\n    \"proyectos\": []\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/usuario/tester",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"usuario",
+										"tester"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear Desarrollador",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"apellido\": \"Haaland\",\n    \"correoElectronico\": \"ehaaland@borussia.com\",\n    \"nombre\": \"Erling\",\n    \"nombreUsuario\": \"ehaaland\",\n    \"contrasena\":\"lewandoskiesmalaso\",\n    \"proyectos\": []\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/usuario/desarrollador",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"usuario",
+										"desarrollador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar Tester",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agregar Desarrollador",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/desarrollador/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"desarrollador",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "6",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crear y agregar Bug",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"descripcion\": \"Nueva Formacion\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Formacion\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 2,\n    \"reportadoPorId\": 5\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/bug",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"bug"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modificar Proyecto",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Futbol Manager\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pruebas erroneas",
+					"item": [
+						{
+							"name": "Asignar tester con rol desarrollador",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "6",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar tester con usuario inexistente",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "10",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar tester vacio",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar tester con proyecto vacio",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "5",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar tester con id proyecto no numerico",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "asdsd",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "5",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar tester con id usuario no numerico",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "asjasjs",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar tester inexistente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "12",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar tester con rol desarrollador",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "6",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar tester de proyecto inexistente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "5",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Asignar desarrollador con rol tester",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/desarrollador/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"desarrollador",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "5",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eliminar proyecto",
+					"item": [
+						{
+							"name": "Desasignar tester",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/tester/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"tester",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "5",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Desasignar desarrollador",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id/desarrollador/:idUsuario",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id",
+										"desarrollador",
+										":idUsuario"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										},
+										{
+											"key": "idUsuario",
+											"value": "6",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar proyecto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/proyecto/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"proyecto",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cantidad de bug",
+			"item": [
+				{
+					"name": "Cantidad bug 0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear y agregar Bug",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Formacion\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Formacion\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1,\n    \"reportadoPorId\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cantidad bug 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear y agregar otro Bug",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva tactica\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de tactica\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cantidad bug 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar bug",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cantidad bug 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/proyecto",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"proyecto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bug",
+			"item": [
+				{
+					"name": "Acceder con tester",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contrasena\": \"123456\",\n    \"correoElectronico\": \"spanzardi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/autenticacion/acceder",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autenticacion",
+								"acceder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Tactica\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1,\n    \"reportadoPorId\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener bugs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener bug concreto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resolver bug",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Resuelto\",\n    \"nombre\": \"Nueva tactica\",\n    \"version\": \"1.1.0\",\n    \"proyectoId\": 1,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar bug",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar bug eliminado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar bug vacio",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar bug id no numerico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "asasjhsad",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar bug eliminado",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Nueva tactica\",\n    \"version\": \"1.1.0\",\n    \"proyectoId\": 1,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar bug vacio",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Nueva tactica\",\n    \"version\": \"1.1.0\",\n    \"proyectoId\": 1,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar bug inexistente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Nueva tactica\",\n    \"version\": \"1.1.0\",\n    \"proyectoId\": 1,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "12",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar bug id no numerico",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Nueva tactica\",\n    \"version\": \"1.1.0\",\n    \"proyectoId\": 1,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "sadkda",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar bug proyecto inexistente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Nueva tactica\",\n    \"version\": \"1.1.0\",\n    \"proyectoId\": 4,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar bug sin nombre",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Cambio de tacticaa\",\n    \"estado\": \"Activo\",\n    \n    \"version\": \"1.1.0\",\n    \"proyectoId\": 1,\n    \"resueltoPorId\": 3,\n    \"reportadoPorId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug con proyecto inexistente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Tactica\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 10,\n    \"reportadoPorId\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug sin proyecto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Tactica\",\n    \"version\": \"1.0.0\",\n    \n    \"reportadoPorId\": 5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug sin reportadoId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Tactica\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1\n    \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug sin version",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Tactica\",\n    \n    \"proyectoId\": 1,\n    \"reportadoPorId\": 5\n    \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug sin nombre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \"estado\": \"Activo\",\n    \n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1,\n    \"reportadoPorId\": 5\n    \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug sin estado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"descripcion\": \"Nueva Tactica\",\n    \n    \"nombre\": \"Cambio de Tactica\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1,\n    \"reportadoPorId\": 5\n    \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Bug sin descripcion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"estado\": \"Activo\",\n    \"nombre\": \"Cambio de Tactica\",\n    \"version\": \"1.0.0\",\n    \"proyectoId\": 1,\n    \"reportadoPorId\": 5\n    \n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/bug",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bug"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW9FbGVjdHJvbmljbyI6InNwYW56YXJkaUBnbWFpbC5jb20iLCJuYmYiOjE2MzM0ODIyODgsImV4cCI6MTYzMzQ4NTg4OCwiaWF0IjoxNjMzNDgyMjg4fQ.C37Y2p3GIOBzbWcVdWc67ubHTEl53MS14tXyObhGmUg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDb3JyZW9FbGVjdHJvbmljbyI6ImFkbWluQGppcnUuY29tIiwibmJmIjoxNjMzMjE1NzY3LCJleHAiOjE2MzMyMTkzNjcsImlhdCI6MTYzMzIxNTc2N30.w1MByYg8lAORk-RLMALtZRgxOq_4xR5TfrXxpJEUbjw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000"
+		}
+	]
+}
